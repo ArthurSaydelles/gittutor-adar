@@ -4,33 +4,48 @@
 
 
 # instalar o pacote usethis
+# pre-requisitos libgit2-dev e libx11-dev
 # install.packages("usethis")
+pak::pak("usethis")
+pak::pak("devtools")
+
+# COMO CONFIGURAR O GIT NO SEU DESKTOP
+# https://happygitwithr.com/https-pat.html
 
 
-# configurando usuario e e-mail do github
-usethis::edit_r_profile()
+# criar um token
+library(usethis) ## ou library(devtools)
+use_git_config(user.name = "ArthurSaydelles", user.email = "asasaydelles@gmail.com")
+
+
+# verificar configuracoes do git
+usethis::git_sitrep()
 
 # verificar configuracoes do projeto
 usethis::proj_sitrep()
 
-# verificar configuracoes do git
-usethis::git_sitrep()
+usethis::create_github_token()
+# token 1035
+# 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
+
+gitcreds::gitcreds_set()
+
+# verificar configurações do git
+#   - your user.name and user.email should appear in global Git config 
+git_sitrep()
 
 # adicionar arquivos a serem ignorados por default
 usethis::git_vaccinate()
 
 
-library(usethis) 
-use_git_config(user.name = "lhmet", user.email = "lhmet@ufsm.br")
 
-
-# check by running a git situation-report: 
-#   - your user.name and user.email should appear in global Git config 
-git_sitrep()
+# configurando usuario e e-mail do github
+usethis::edit_r_profile()
 
 
 # gerar personal token
 usethis::create_github_token()
+
 
 # salvar token
 gitcreds::gitcreds_set()
