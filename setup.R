@@ -25,8 +25,6 @@ usethis::git_sitrep()
 usethis::proj_sitrep()
 
 usethis::create_github_token()
-# token 1035
-# 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
 
 gitcreds::gitcreds_set()
 
